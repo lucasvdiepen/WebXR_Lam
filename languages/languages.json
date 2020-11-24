@@ -3,12 +3,12 @@
    [
       {
          "language":"English",
-         "image":"images/en.png",
+         "image":"languages/images/en.png",
          "file":"languages/en.json"
       },
       {
          "language":"Nederlands",
-         "image":"images/nl.png",
+         "image":"languages/images/nl.png",
          "file":"languages/nl.json"
       }
    ]
