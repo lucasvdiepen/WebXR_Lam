@@ -1,0 +1,75 @@
+body{
+    margin: 0px;
+}
+
+#lamImage{
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 62%;
+}
+
+#descriptionContainer{
+    top: 50%;
+    height: 50%;
+    width: 62%;
+    background-color: #5D5D61;
+}
+
+#infoContainer{
+    position: absolute;
+    top: 0;
+    left: 62%;
+    height: 100%;
+    width: 38%;
+    background-color: #4D5243;
+}
+
+#lamLogo{
+    display: block;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-bottom: 0px;
+}
+
+#titleContainer p  {
+    display: block;
+    margin-top: 4%;
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 50;
+}
+
+#titleContainer p span {
+    background-color: #879174;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.textCenter{
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 28;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+#basicInfoContainer,
+#descriptionLamContainer{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#descriptionLamContainer{
+    margin-top: 20%;
+}
+
+/*#generalDescription{
+    position: absolute;
+    margin-top: 50px;
+}*/
