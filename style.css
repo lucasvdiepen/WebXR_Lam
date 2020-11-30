@@ -25,6 +25,11 @@ body{
     background-color: #4D5243;
 }
 
+.webXRContainer {
+    background-color: #5D5D61;
+    height: 100%;
+}
+
 #lamLogo{
     display: block;
     margin-top: 4%;
@@ -78,7 +83,7 @@ body{
     cursor: default;
     position: relative;
     display: inline-block;
-    left: 68.2%;
+    left: 68%;
 }
 
 .currentLanguage{
