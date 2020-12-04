@@ -3,6 +3,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
         <script src="jquery.min.js"></script>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="languages/languages.js"></script>
         <title>WebXR Lam</title>
     </head>
@@ -50,7 +51,20 @@
         <div id="webXRContainer">
             <div id="webXRleft"></div>
             <div id="webXRright"></div>
-            <div id="webXR"></div>
+            <div id="webXR">
+                <a-scene id="aFrame" embedded>
+                    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+                    <!--
+                    <a-asset>
+                        <a-asset-item id="pot-obj" src="Pot_LowPoly.obj"></a-asset-item>
+                        <a-asset-item id="pot-mtl" src="Pot_LowPoly.mtl"></a-asset-item>
+                    </a-asset>
+                    
+                    <a-obj-model position="30 -4 1" rotation="0 90 180" src="#pot-obj" mtl="#pot-mtl" scale="1 1 1"></a-obj-model>
+                -->
+                    <a-entity camera look-controls wasd-controls="acceleration:1000" position="0 1.6 0"></a-entity>
+                </a-scene>
+            </div>
         </div>
     </body>
 </html>

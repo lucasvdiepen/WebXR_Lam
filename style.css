@@ -42,18 +42,15 @@ body{
 }
 
 #webXR{
-    width: 700px;
-    height: 300px;
+    width: 1700px;
+    height: 900px;
     background-color: black;
 
     position: absolute;
-    top: 0;
+    top: 103.5%;
     bottom: 0;
     left: 0;
     right: 0;
-
-    /* margin-left: auto;
-    margin-right: auto; */
 
     margin-left: auto;
     margin-right: auto;
