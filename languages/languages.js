@@ -15,34 +15,38 @@ function SelectDefaultLanguage()
 
 function getKeyByValue(object, value) {
     return Object.keys(object).find(key => object[key] === value);
-  }
+}
 
-function SelectLanguage(path)
+function SelectLanguage(path, click)
 {
-    let langName = getKeyByValue(allLanguageFiles, path);
-    if(langName)
+    if(path != savedLanguage || !click)
     {
-        $(".currentLanguage p").text(langName);
-        $(".currentLanguage img").attr("src", allLanguageImages[langName]);
-        $("#language" + getKeyByValue(allLanguageFiles, savedLanguage) + " p").removeClass("selectedLanguageDropdown");
-        $("#language" + langName + " p").addClass("selectedLanguageDropdown");
-    } 
-    
-    localStorage.setItem("language", path);
-    savedLanguage = path;
-    $.getJSON(path, function(json) {
-        //change all text
-        $("#welcomeText").text(json.greeting);
-    })
-    .fail(function(){
-        SelectDefaultLanguage();//PROBLEM: infinite loop if file does not exitst or is unavailable
-        console.log("Failed getting language data");
-    })
+        let langName = getKeyByValue(allLanguageFiles, path);
+        if(langName)
+        {
+            $(".currentLanguage p").text(langName);
+            $(".currentLanguage img").attr("src", allLanguageImages[langName]);
+            $("#language" + getKeyByValue(allLanguageFiles, savedLanguage) + " p").removeClass("selectedLanguageDropdown");
+            $("#language" + langName + " p").addClass("selectedLanguageDropdown");
+        } 
+        
+        localStorage.setItem("language", path);
+        savedLanguage = path;
+        $.getJSON(path, function(json) {
+            //change all text
+            $("#welcomeText").text(json.greeting);
+            $(".webXRbutton").text(json.xrButton);
+        })
+        .fail(function(){
+            SelectDefaultLanguage();//PROBLEM: infinite loop if file does not exitst or is unavailable
+            console.log("Failed getting language data");
+        })
+    }
 }
 
 function LanguageClick(lang)
 {
-    SelectLanguage(allLanguageFiles[lang]);
+    SelectLanguage(allLanguageFiles[lang], true);
 }
 
 function FillSelectWithOptions(savedLanguage)
@@ -84,5 +88,5 @@ $(document).ready(function(){
     }
 
     FillSelectWithOptions(savedLanguage);
-    SelectLanguage(savedLanguage);
+    SelectLanguage(savedLanguage, false);
 });
