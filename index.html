@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="jquery.min.js"></script>
         <script src="aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@2.0.0/index.js"></script>
         <script src="languages/languages.js"></script>
         <title>WebXR Lam</title>
     </head>
@@ -53,7 +54,7 @@
             <div id="webXRleft"></div>
             <div id="webXRright"></div>
             <div id="webXR">
-                <a-scene id="aFrame" embedded>
+                <a-scene id="aFrame" embedded environment="preset:forest">
                     <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
                     <!--
                     <a-asset>
