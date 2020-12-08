@@ -47,8 +47,8 @@ body{
 }
 
 #webXR{
-    width: 1820px;
-    height: 900px;
+    width: 96%;
+    height: 93%;
     background-color: black;
 
     position: absolute;
