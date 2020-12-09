@@ -34,14 +34,20 @@ function SelectLanguage(path, click)
         savedLanguage = path;
         $.getJSON(path, function(json) {
             //change all text
-            $("#welcomeText").text(json.greeting);
-            $(".webXRbutton").text(json.xrButton);
+            $("#welcomeText").html(AddLineBreaks(json.greeting));
+            $(".webXRbutton").html(AddLineBreaks(json.xrButton));
+            $("#generalDescription p").html(AddLineBreaks(json.generalDescription));
         })
         .fail(function(){
             SelectDefaultLanguage();//PROBLEM: infinite loop if file does not exitst or is unavailable
             console.log("Failed getting language data");
         })
     }
+}
+
+function AddLineBreaks(text)
+{
+    return text.replace("\n", "<br>");
 }
 
 function LanguageClick(lang)

@@ -1,4 +1,5 @@
 {
 	"greeting": "Welkom",
-	"xrButton": "Klik hier om naar de VR beleving te gaan"
+	"xrButton": "Klik hier om naar de VR beleving te gaan",
+	"generalDescription": "Een description van wat de inhoud is van het Web XR en waarom het zo is, hoe je het zou kunnen meemaken enz, \n\nLorem Ipsum"
 }
