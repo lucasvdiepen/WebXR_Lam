@@ -1,5 +1,7 @@
 {
 	"greeting": "Welcome",
 	"xrButton": "Click here to go to the VR experience",
-	"generalDescription": ""
+	"generalDescription": "Een description van wat de inhoud is van het Web XR en waarom het zo is, hoe je het zou kunnen meemaken enz, \n\nLorem Ipsum",
+	"basicInfo": "Basic Info (Dates, Vips, Locatie, Etc)",
+	"lamDescription": "Description van het Lam zelf, Alles dat je daar kan vinden en doen. De locatie en waarom het daar zit, wat van de geschiedenis"
 }

@@ -37,9 +37,11 @@ function SelectLanguage(path, click)
             $("#welcomeText").html(AddLineBreaks(json.greeting));
             $(".webXRbutton").html(AddLineBreaks(json.xrButton));
             $("#generalDescription p").html(AddLineBreaks(json.generalDescription));
+            $("#basicInfoContainer p").html(AddLineBreaks(json.basicInfo));
+            $("#descriptionLamContainer p").html(AddLineBreaks(json.lamDescription));
         })
         .fail(function(){
-            SelectDefaultLanguage();//PROBLEM: infinite loop if file does not exitst or is unavailable
+            //SelectDefaultLanguage();//PROBLEM: infinite loop if file does not exitst or is unavailable
             console.log("Failed getting language data");
         })
     }
@@ -47,7 +49,7 @@ function SelectLanguage(path, click)
 
 function AddLineBreaks(text)
 {
-    return text.replace("\n", "<br>");
+    return text.replaceAll("\n", "<br>");
 }
 
 function LanguageClick(lang)
