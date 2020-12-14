@@ -68,7 +68,7 @@ body{
 
 #lamLogo{
     display: block;
-    margin-top: 4%;
+    margin-top: 20%;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
@@ -139,9 +139,10 @@ body{
 
 .languageDropdown{
     cursor: default;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     display: inline-block;
-    left: 68%;
 }
 
 .currentLanguage{
