@@ -33,6 +33,7 @@ body{
 #webXRleft{
     position: absolute;
     background-color: #5D5D61;
+    top: 300%;
     height: 100%;
     width: 62%;
 }
@@ -43,16 +44,70 @@ body{
     left: 62%;
     width: 38%;
     height: 100%;
+    top: 300%;
+}
+
+#aboutLeft {
+    position: absolute;
+    background-color: rgb(77, 103, 82);
+    height: 100%;
+    width: 62%;
+}
+
+#aboutRight{
+    position: absolute;
+    background-color: rgb(64, 94, 57);
+    left: 62%;
+    width: 38%;
+    height: 100%;
     top: 100%;
 }
 
+#quotesLeft{
+    position: absolute;
+    background-color: rgb(86, 86, 108);
+    top: 200%;
+    height: 100%;
+    width: 62%;
+}
+
+#quotesRight {
+    position: absolute;
+    background-color: rgb(72, 76, 80);
+    top: 200%;
+    height: 100%;
+    left: 62%;
+    width: 38%;
+}
+
 #webXR{
+    position: absolute;
+    top: 300%;
+    height: 100%;
+    width: 100%;
+}
+
+#quotes{
+    position: absolute;
+    top: 200%;
+    height: 100%;
+    width: 100%;
+}
+
+#about{
+    position: absolute;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+#webXRContainer{
     width: 96%;
     height: 93%;
     background-color: black;
 
     position: absolute;
-    top: 103.5%;
+    top: 303.5%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -73,6 +128,41 @@ body{
     margin-right: auto;
     width: 40%;
     margin-bottom: 0px;
+}
+
+#buttonsContainer{
+    text-align: center;
+}
+
+#personalQuotes{
+    margin-right: 20px;
+}
+
+#aboutUs{
+    margin-left: 20px;
+}
+
+#personalQuotes, #aboutUs{
+    display: inline-block;
+    padding:1em 0.1em;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #9A9A9A;
+    cursor: default;
+    margin-top: 10%;
+    min-width: 200px;
+}
+
+#personalQuotes:hover, #aboutUs:hover{
+    border-color: rgba(255,255,255,1);
 }
 
 .webXRbutton{
