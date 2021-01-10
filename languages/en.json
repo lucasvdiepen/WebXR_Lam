@@ -3,5 +3,13 @@
 	"xrButton": "Click here to go to the VR experience",
 	"generalDescription": "A description on what the LAM is and what it's about. etc., \n\nLorem Ipsum",
 	"basicInfo": "Basic Info (Dates, Vips, Locatie, Etc)",
-	"lamDescription": "A description on LAM itself, locations, people, what you can do there"
+	"lamDescription": "A description on LAM itself, locations, people, what you can do there",
+	"quotesButton": "Personal quotes",
+	"aboutUsButton": "About Us",
+	"employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu. Pellentesque commodo placerat dolor, ut pretium quam vestibulum et. Aenean facilisis, felis vel fermentum consectetur, ligula tellus tristique ipsum, vitae volutpat nisi massa ut odio. Mauris a blandit quam. Praesent aliquet odio elit. Aenean bibendum ultricies lorem, vel rhoncus ex scelerisque ut.",
+	"history": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu. Pellentesque commodo placerat dolor, ut pretium quam vestibulum et. Aenean facilisis, felis vel fermentum consectetur, ligula tellus tristique ipsum, vitae volutpat nisi massa ut odio. Mauris a blandit quam. Praesent aliquet odio elit. Aenean bibendum ultricies lorem, vel rhoncus ex scelerisque ut. Mauris porta felis odio, ut euismod neque scelerisque vitae. Suspendisse finibus feugiat tellus vel interdum. Aliquam consequat ipsum lacus, in finibus risus semper at. Donec in ornare odio. Duis elementum purus ligula, vel ornare lacus rutrum non. Etiam et ornare nisl.",
+	"review1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu.",
+	"review2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu.",
+	"review3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu.",
+	"reviews": "User review\n\n\nUser review\n\n\nUser review\n\n\nUser review\n\n\nUser review"
 }

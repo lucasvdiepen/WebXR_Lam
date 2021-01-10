@@ -3,5 +3,13 @@
 	"xrButton": "Klik hier om naar de VR beleving te gaan",
 	"generalDescription": "Een description van wat de inhoud is van het Web XR en waarom het zo is, hoe je het zou kunnen meemaken enz, \n\nLorem Ipsum",
 	"basicInfo": "Basic Info (Dates, Locatie, Etc)",
-	"lamDescription": "Het LAM is in begin 2019 geopend. Het museum is voor alle leeftijden en heeft kunst die iets met voedsel en consumptie te maken heeft."
+	"lamDescription": "Het LAM is in begin 2019 geopend. Het museum is voor alle leeftijden en heeft kunst die iets met voedsel en consumptie te maken heeft.",
+	"quotesButton": "Persoonlijke quotes",
+	"aboutUsButton": "Over ons",
+	"employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu. Pellentesque commodo placerat dolor, ut pretium quam vestibulum et. Aenean facilisis, felis vel fermentum consectetur, ligula tellus tristique ipsum, vitae volutpat nisi massa ut odio. Mauris a blandit quam. Praesent aliquet odio elit. Aenean bibendum ultricies lorem, vel rhoncus ex scelerisque ut.",
+	"history": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu. Pellentesque commodo placerat dolor, ut pretium quam vestibulum et. Aenean facilisis, felis vel fermentum consectetur, ligula tellus tristique ipsum, vitae volutpat nisi massa ut odio. Mauris a blandit quam. Praesent aliquet odio elit. Aenean bibendum ultricies lorem, vel rhoncus ex scelerisque ut. Mauris porta felis odio, ut euismod neque scelerisque vitae. Suspendisse finibus feugiat tellus vel interdum. Aliquam consequat ipsum lacus, in finibus risus semper at. Donec in ornare odio. Duis elementum purus ligula, vel ornare lacus rutrum non. Etiam et ornare nisl.",
+	"review1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu.",
+	"review2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu.",
+	"review3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu.",
+	"reviews": "User review\n\n\nUser review\n\n\nUser review\n\n\nUser review\n\n\nUser review"
 }
