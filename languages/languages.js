@@ -37,7 +37,6 @@ function SelectLanguage(path, click)
             $("#welcomeText").html(AddLineBreaks(json.greeting));
             $(".webXRbutton").html(AddLineBreaks(json.xrButton));
             $("#generalDescription p").html(AddLineBreaks(json.generalDescription));
-            $("#basicInfoContainer p").html(AddLineBreaks(json.basicInfo));
             $("#descriptionLamContainer p").html(AddLineBreaks(json.lamDescription));
             $("#personalQuotes").html(AddLineBreaks(json.quotesButton));
             $("#aboutUs").html(AddLineBreaks(json.aboutUsButton));
