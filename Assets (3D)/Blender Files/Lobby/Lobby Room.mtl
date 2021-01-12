@@ -1,0 +1,46 @@
+# Blender MTL File: 'Lobby Room.blend'
+# Material Count: 4
+
+newmtl Material.001
+Ns 706.220154
+Ka 0.275591 0.275591 0.275591
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mikey\\Documents\\Ma\\Bewijzenmap\\X 1\\Y 2 (Museum Online)\\Beroeps Opdracht\\Repo Folder\\WebXR_Lam\\Assets (3D)\\Textures\\Lobby\\Marble Floor.jpeg
+
+newmtl Material.002
+Ns 273.420523
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.129921 0.129921 0.129921
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\mikey\\Documents\\Ma\\Bewijzenmap\\X 1\\Y 2 (Museum Online)\\Beroeps Opdracht\\Repo Folder\\WebXR_Lam\\Assets (3D)\\Textures\\Lobby\\White Paint Walls.jpg
+
+newmtl Material.003
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\mikey\\Documents\\Ma\\Bewijzenmap\\X 1\\Y 2 (Museum Online)\\Beroeps Opdracht\\Repo Folder\\WebXR_Lam\\Assets (3D)\\Textures\\Lobby\\Concrete.jpeg
+
+newmtl Material.004
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\mikey\\Documents\\Ma\\Bewijzenmap\\X 1\\Y 2 (Museum Online)\\Beroeps Opdracht\\Repo Folder\\WebXR_Lam\\Assets (3D)\\Textures\\Lobby\\Pillar Marbel.jpg
