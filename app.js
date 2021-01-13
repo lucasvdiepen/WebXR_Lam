@@ -11,6 +11,8 @@ const room = new Model("Assets (3D)/Blender Files/Lobby/Lobby Room.gltf");
 room.setPosition(1, 1, 1);
 room.setScale(0.2, 0.2, 0.2);
 
+const textHolder = CreateTextHolder(0, 1.5, -1.5);
+
 const lowPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (Low Polly).gltf");
 lowPolyPedistal.setPosition(1.998, 0.990, -0.975);
 lowPolyPedistal.setScale(0.15, 0.15, 0.15);
@@ -19,22 +21,28 @@ const highPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Displa
 highPolyPedistal.setPosition(1.385, 0.985, -0.975);
 highPolyPedistal.setScale(0.15, 0.15, 0.15);
 
-const textHolder = new Cube();
-textHolder.setVisible(false);
-textHolder.setColor("#000000");
-textHolder.setPosition(0, 1.5, -1.5);
-textHolder.setScale(0.850, 0.6, 0.03);
-textHolder.setOpacity(0.6);
-textHolder.elem.setAttribute("look-at", "#head");
+//Set all event listeners
 
-const infoText = new Text(TextFitInHolder("Dit is een tekst\nDit is een andere tekst"), textHolder.getId());
-infoText.setPosition(-0.48, 0, 1);
-infoText.setFontsize(0.4);
-infoText.addScale(-0.850, -0.6, -0.03);
-infoText.setColor("white");
-//infoText.elem.setAttribute("look-at", "#head");
+cube.addEventListener('click', () => textHolder.toggleVisibility());
 
-cube.addEventListener('click', () => textHolder.setVisible(true));
+function CreateTextHolder(x, y, z)
+{
+    const textHolder = new Cube();
+    textHolder.setVisible(false);
+    textHolder.setColor("#000000");
+    textHolder.setPosition(0, 1.5, -1.5);
+    textHolder.setScale(0.850, 0.6, 0.03);
+    textHolder.setOpacity(0.6);
+    textHolder.elem.setAttribute("look-at", "#head");
+
+    const infoText = new Text(TextFitInHolder("Dit is een tekst\nDit is een andere tekst"), textHolder.getId());
+    infoText.setPosition(-0.48, 0, 1);
+    infoText.setFontsize(0.4);
+    infoText.addScale(-0.850, -0.6, -0.03);
+    infoText.setColor("white");
+
+    return textHolder;
+}
 
 function TextFitInHolder(text)
 {
