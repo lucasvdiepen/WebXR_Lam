@@ -154,6 +154,13 @@ class VRElement {
         this.elem.setAttribute(`visible`, isVisible);
     }
 
+    toggleVisibility()
+    {
+        let visible = this.elem.getAttribute("visible");
+        visible = !visible;
+        this.elem.setAttribute("visible", visible);
+    }
+
     setOpacity(newOpacity) {
         this.elem.setAttribute('opacity', newOpacity);
     }
