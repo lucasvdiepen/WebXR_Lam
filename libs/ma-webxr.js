@@ -16,7 +16,7 @@ class Controls {
 
         const cameraRig = document.createElement('a-entity');
         cameraRig.id = "cameraRig";
-        cameraRig.innerHTML = `<a-entity id="head" camera="active: true" look-controls cursor="rayOrigin: mouse" position="0 1.54 0"></a-entity>
+        cameraRig.innerHTML = `<a-entity id="head" camera="active: true" look-controls cursor="rayOrigin: mouse" position="0 2 0"></a-entity>
                           <a-entity id="lefthand" oculus-touch-controls="hand: left"
                                     teleport-controls="button: trigger; collisionEntities: .collidable; cameraRig: #cameraRig; teleportOrigin: #head; hitCylinderColor: #3fa9fa; curveHitColor: #3fa9fa; curveMissColor: #3fa9fa;"></a-entity>
                           <a-entity id="righthand" oculus-touch-controls="hand: right" laser-controls="hand: right">
@@ -262,6 +262,11 @@ class Light extends VRElement {
 
     setIntensity(intensity) {
         this.elem.setAttribute('intensity', intensity);
+    }
+
+    setDistance(distance)
+    {
+        this.elem.setAttribute("distance", distance);
     }
 
     setColor(color) {
