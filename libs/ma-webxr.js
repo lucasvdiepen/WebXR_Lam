@@ -150,6 +150,10 @@ class VRElement {
         this.elem.setAttribute(`scale`, this.scale);
     }
 
+    getVisible(){
+        return this.elem.getAttribute("visible");
+    }
+
     setVisible(isVisible) {
         this.elem.setAttribute(`visible`, isVisible);
     }
