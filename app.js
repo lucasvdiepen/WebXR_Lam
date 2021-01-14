@@ -35,6 +35,10 @@ grapeSpotLight.setPosition(-2.136, 2, -0.975);
 grapeSpotLight.setDistance(0.93);
 grapeSpotLight.setTarget(grapeModel);
 
+/*const kettleModel = new Model("Assets (3D)/Blender Files/Kettle/Kettle.gltf");
+kettleModel.setPosition(-2.136, 1.877, -0.975);
+kettleModel.setScale(0.2, 0.2, 0.2);*/
+
 /*const grapeSpotLight = new DirectionalLight();
 grapeSpotLight.setPosition(-2.136, 2, -0.975);*/
 
