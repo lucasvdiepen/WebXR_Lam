@@ -23,7 +23,10 @@ highPolyPedistal.setScale(0.15, 0.15, 0.15);
 
 //Set all event listeners
 
-cube.addEventListener('click', () => textHolder.toggleVisibility());
+cube.addEventListener("click", () => {
+    TextHolderToggleVisibility(textHolder);
+});
+highPolyPedistal.addEventListener("click", () => lowPolyPedistal.toggleVisibility());
 
 function CreateTextHolder(x, y, z)
 {
@@ -42,6 +45,22 @@ function CreateTextHolder(x, y, z)
     infoText.setColor("white");
 
     return textHolder;
+}
+
+function TextHolderToggleVisibility(textHolder)
+{
+    let visibility = textHolder.getVisible();
+    visibility = !visibility;
+    if(visibility)
+    {
+        textHolder.setScale(0.850, 0.6, 0.03);
+        textHolder.setVisible(true);
+    }
+    else
+    {
+        textHolder.setVisible(false);
+        textHolder.setScale(0, 0, 0);
+    }
 }
 
 function TextFitInHolder(text)
