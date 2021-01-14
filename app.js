@@ -11,7 +11,7 @@ const room = new Model("Assets (3D)/Blender Files/Lobby/Lobby Room.gltf");
 room.setPosition(1, 1, 1);
 room.setScale(0.2, 0.2, 0.2);
 
-const textHolder = CreateTextHolder(0, 1.5, -1.5);
+const textHolder = CreateTextHolder("Dit is een tekst\nDit is een andere tekst", 0, 1.5, -1.5);
 
 const lowPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (Low Poly).gltf");
 lowPolyPedistal.setPosition(1.998, 0.990, -0.975);
@@ -20,6 +20,25 @@ lowPolyPedistal.setScale(0.15, 0.15, 0.15);
 const highPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
 highPolyPedistal.setPosition(1.385, 0.985, -0.975);
 highPolyPedistal.setScale(0.15, 0.15, 0.15);
+
+const grapePedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
+grapePedistal.setPosition(-2.136, 0.972, -0.975);
+grapePedistal.setScale(0.3, 0.3, 0.3);
+
+const grapeModel = new Model("Assets (3D)/Blender Files/Grape/Grape.gltf");
+grapeModel.setPosition(-2.136, 1.877, -0.975);
+grapeModel.setRotation(0, 90, 0);
+grapeModel.setScale(0.1, 0.1, 0.1);
+
+const grapeSpotLight = new SpotLight();
+grapeSpotLight.setPosition(-2.136, 2, -0.975);
+grapeSpotLight.setDistance(0.93);
+grapeSpotLight.setTarget(grapeModel);
+
+/*const grapeSpotLight = new DirectionalLight();
+grapeSpotLight.setPosition(-2.136, 2, -0.975);*/
+
+const grapeTextHolder = CreateTextHolder("Grape model text", -1.582, 1.510, -0.988);
 
 //Sound
 backgroundMusic = new Howl({
@@ -34,19 +53,24 @@ backgroundMusic = new Howl({
 cube.addEventListener("click", () => {
     TextHolderToggleVisibility(textHolder);
 });
+
+grapeModel.addEventListener("click", () =>{
+    TextHolderToggleVisibility(grapeTextHolder);
+});
+
 highPolyPedistal.addEventListener("click", () => lowPolyPedistal.toggleVisibility());
 
-function CreateTextHolder(x, y, z)
+function CreateTextHolder(text, x, y, z)
 {
     const textHolder = new Cube();
     textHolder.setVisible(false);
     textHolder.setColor("#000000");
-    textHolder.setPosition(0, 1.5, -1.5);
+    textHolder.setPosition(x, y, z);
     textHolder.setScale(0.850, 0.6, 0.03);
     textHolder.setOpacity(0.6);
     textHolder.elem.setAttribute("look-at", "#head");
 
-    const infoText = new Text(TextFitInHolder("Dit is een tekst\nDit is een andere tekst"), textHolder.getId());
+    const infoText = new Text(TextFitInHolder(text), textHolder.getId());
     infoText.setPosition(-0.48, 0, 1);
     infoText.setFontsize(0.4);
     infoText.addScale(-0.850, -0.6, -0.03);
@@ -75,7 +99,7 @@ function AframeClicked()
 {
     if(!backgroundMusic.playing())
     {
-        backgroundMusic.play();
+        //backgroundMusic.play();
     }
 }
 
