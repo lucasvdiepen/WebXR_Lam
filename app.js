@@ -103,7 +103,7 @@ function AframeClicked()
 {
     if(!backgroundMusic.playing())
     {
-        //backgroundMusic.play();
+        backgroundMusic.play();
     }
 }
 
