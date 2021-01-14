@@ -1,0 +1,13 @@
+# Blender MTL File: 'Kettle .blend'
+# Material Count: 1
+
+newmtl Material.001
+Ns 706.220154
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 21.650000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mikey\\Documents\\Ma\\Bewijzenmap\\X 1\\Y 2 (Museum Online)\\Beroeps Opdracht\\Repo Folder\\WebXR_Lam\\Assets (3D)\\Textures\\Kunst Stukken\\Gold.jpg

@@ -46,6 +46,9 @@ function SelectLanguage(path, click)
             $("#userReview2").html(AddLineBreaks(json.review2));
             $("#userReview3").html(AddLineBreaks(json.review3));
             $("#userReviews").html(AddLineBreaks(json.reviews));
+
+            //set all text for text holders
+            SetTextHolderText(json.grapeText, json.kettleText, json.artPieceText, json.potText);
         })
         .fail(function(){
             //SelectDefaultLanguage();//PROBLEM: infinite loop if file does not exitst or is unavailable

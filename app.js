@@ -2,47 +2,32 @@ const controls = new Controls(50);
 controls.setSpeed(100);
 controls.enableMovement();
 
-const cube = new Cube();
+/*const cube = new Cube();
 cube.setColor('#4CC3D9');
 cube.setPosition(0, 2, -2);
 cube.setScale(0.5, 0.5, 0.5);
+
+const textHolder = CreateTextHolder("Dit is een tekst\nDit is een andere tekst", 0, 1.5, -1.5);*/
 
 const room = new Model("Assets (3D)/Blender Files/Lobby/Lobby Room.gltf");
 room.setPosition(1, 1, 1);
 room.setScale(0.2, 0.2, 0.2);
 
-const textHolder = CreateTextHolder("Dit is een tekst\nDit is een andere tekst", 0, 1.5, -1.5);
+const grapeModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Grape/Grape.gltf", false, -2.136, 0.972, -0.975, 1.877, 0.1, 0.1, 0.1, 0, 90, 0, 2.404);
 
-const lowPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (Low Poly).gltf");
-lowPolyPedistal.setPosition(1.998, 0.990, -0.975);
-lowPolyPedistal.setScale(0.15, 0.15, 0.15);
+const grapeTextHolder = CreateTextHolder("", -1.582, 1.626, -0.975);
 
-const highPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
-highPolyPedistal.setPosition(1.385, 0.985, -0.975);
-highPolyPedistal.setScale(0.15, 0.15, 0.15);
+const artPieceModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Art Piece/Art Piece 1.gltf", false, -2.129, 0.972, 2.620, 2.159, 0.1, 0.1, 0.1, 0, 90, -3.160, 2.339);
 
-const grapePedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
-grapePedistal.setPosition(-2.136, 0.972, -0.975);
-grapePedistal.setScale(0.3, 0.3, 0.3);
+const artPieceTextHolder = CreateTextHolder("", -1.582, 1.626, 2.620);
 
-const grapeModel = new Model("Assets (3D)/Blender Files/Grape/Grape.gltf");
-grapeModel.setPosition(-2.136, 1.877, -0.975);
-grapeModel.setRotation(0, 90, 0);
-grapeModel.setScale(0.1, 0.1, 0.1);
+const kettleModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Kettle/Kettle.gltf", true, -2.129, 0.972, 0.945, 1.867, 0.1, 0.1, 0.1, 0, 90, 0, 2.525);
 
-const grapeSpotLight = new SpotLight();
-grapeSpotLight.setPosition(-2.136, 2, -0.975);
-grapeSpotLight.setDistance(0.93);
-grapeSpotLight.setTarget(grapeModel);
+const kettleTextHolder = CreateTextHolder("", -1.582, 1.626, 0.945);
 
-/*const kettleModel = new Model("Assets (3D)/Blender Files/Kettle/Kettle.gltf");
-kettleModel.setPosition(-2.136, 1.877, -0.975);
-kettleModel.setScale(0.2, 0.2, 0.2);*/
+const potModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Pot (Low Poly)/Pot (Low Poly).gltf", true, 0.991, 0.972, 4.145, 1.871, 0.15, 0.15, 0.15, 180, 0, 0, 2.4);
 
-/*const grapeSpotLight = new DirectionalLight();
-grapeSpotLight.setPosition(-2.136, 2, -0.975);*/
-
-const grapeTextHolder = CreateTextHolder("Grape model text", -1.582, 1.510, -0.988);
+const potTextHolder = CreateTextHolder("", 0.991, 1.626, 3.591);
 
 //Sound
 backgroundMusic = new Howl({
@@ -54,15 +39,62 @@ backgroundMusic = new Howl({
 
 //Set all event listeners
 
-cube.addEventListener("click", () => {
+/*cube.addEventListener("click", () => {
     TextHolderToggleVisibility(textHolder);
-});
+});*/
 
 grapeModel.addEventListener("click", () =>{
     TextHolderToggleVisibility(grapeTextHolder);
 });
 
-highPolyPedistal.addEventListener("click", () => lowPolyPedistal.toggleVisibility());
+kettleModel.addEventListener("click", () =>{
+    TextHolderToggleVisibility(kettleTextHolder);
+});
+
+artPieceModel.addEventListener("click", () =>{
+    TextHolderToggleVisibility(artPieceTextHolder);
+});
+
+potModel.addEventListener("click", () =>{
+    TextHolderToggleVisibility(potTextHolder);
+});
+
+function SetTextHolderText(grapeText, kettleText, artPieceText, potText)
+{
+    ChangeTextHolderText(grapeTextHolder, grapeText);
+    ChangeTextHolderText(kettleTextHolder, kettleText);
+    ChangeTextHolderText(artPieceTextHolder, artPieceText);
+    ChangeTextHolderText(potTextHolder, potText);
+}
+
+function ChangeTextHolderText(textHolder, text)
+{
+    let textElement = document.getElementById(textHolder.getId()).childNodes[0];
+    textElement.setAttribute("value", TextFitInHolder(text));
+}
+
+function CreateModelOnPedistal(modelPath, pedistalLowPoly, pedistalX, pedistalY, pedistalZ, modelY, modelScaleX, modelScaleY, modelScaleZ, modelRotationX, modelRotationY, modelRotationZ, spotlightY)
+{
+    let pedistalPath = "";
+    if(pedistalLowPoly) pedistalPath = "Assets (3D)/Blender Files/Lobby Props/Display Pedistal (Low Poly).gltf";
+    else pedistalPath = "Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf";
+
+    const pedistal = new Model(pedistalPath);
+    pedistal.setPosition(pedistalX, pedistalY, pedistalZ);
+    pedistal.setScale(0.3, 0.3, 0.3);
+
+    const model = new Model(modelPath);
+    model.setPosition(pedistalX, modelY, pedistalZ);
+    model.setRotation(modelRotationX, modelRotationY, modelRotationZ);
+    model.setScale(modelScaleX, modelScaleY, modelScaleZ);
+
+    const spotlight = new SpotLight();
+    spotlight.setPosition(pedistalX, spotlightY, pedistalZ);
+    spotlight.setDistance(0.93);
+    spotlight.setTarget(model);
+
+    return model;
+}
 
 function CreateTextHolder(text, x, y, z)
 {
@@ -114,31 +146,3 @@ function TextFitInHolder(text)
     for(var i = 0; i < newLines; i++) newText += "\n";
     return newText;
 }
-
-function CalculateCrossProduct(x1, y1, x2, y2)
-{
-    return x1 * y2 - y1 * x2;
-}
-
-function CalculateDotProduct(x1, y1, x2, y2)
-{
-    return x1 * x2 + y1 * y2;
-}
-
-function CalculateAngle(x1, y1, x2, y2)
-{
-    let crossProduct = CalculateCrossProduct(x1, y1, x2, y2);
-    let Angle = Math.atan2(Math.abs(crossProduct), CalculateDotProduct(x1, y1, x2, y2)) * 180 / Math.PI;
-    if(crossProduct < 0) Angle = 360 - Angle;
-    return Angle;
-}
-
-/*setInterval(function(){ 
-    //console.log(controls.getPosition());
-    let camPos = controls.getPosition();
-
-    let angle = CalculateAngle(-1, -3, camPos.x, camPos.z);
-    console.log(angle);
-
-    textHolder.setRotation(0, angle, 0);
-}, 500);*/

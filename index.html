@@ -13,13 +13,6 @@
         <title>WebXR Lam</title>
     </head>
     <body>
-        <!---
-        <h1>WebXR Lam</h1>
-        <h2 id="welcomeText"></h2>
-        <input type="button" id="testButton" value="test"/>
-        <br>
-        <select id="languageSelect"></select>
-        -->
         <div id="lamImageContainer">
             <img id="lamImage" src="Images/lam_building.jpg" alt="Lam gebouw" />
         </div>
@@ -33,7 +26,7 @@
         <div id="infoContainer">
             <div class="languageDropdown languageDropdownHover">
                 <div class="currentLanguage">
-                    <img class="languageFlag">
+                    <img src="" alt="flag" class="languageFlag">
                     <p></p>
                 </div>
                 <div class="languageDropdownContent">
@@ -105,34 +98,7 @@
             <div id="webXRright"></div>
             <div id="webXRContainer">
                 <a-scene id="aFrame" embedded environment="preset:forest" renderer="gammaOutput: true" onclick="AframeClicked()">
-                    <!--<a-entity id="cameraRig">
-                        <a-entity id="head" camera="active: true" wasd-controls="acceleration:100" look-controls cursor="rayOrigin: mouse" position="0 1.7 0"></a-entity>
-                        <a-entity id="lefthand" oculus-touch-controls="hand: left"
-                                teleport-controls="button: trigger; collisionEntities: .collidable; cameraRig: #cameraRig; teleportOrigin: #head; hitCylinderColor: #3fa9fa; curveHitColor: #3fa9fa; curveMissColor: #3fa9fa;"></a-entity>
-                        <a-entity id="righthand" oculus-touch-controls="hand: right" laser-controls="hand: right">
-                        </a-entity>
-                    </a-entity>-->
-
                     
-                    
-
-                    <!--<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>-->
-                    <!--<a-box id="textHolder" position="-1 1.7 -3" scale="2 1 0.03" opacity="0.5" ccolor="#000000"></a-box>-->
-                    <!--
-                    <a-asset>
-                        <a-asset-item id="pot-obj" src="Pot_LowPoly.obj"></a-asset-item>
-                        <a-asset-item id="pot-mtl" src="Pot_LowPoly.mtl"></a-asset-item>
-                    </a-asset>
-                    
-                    <a-obj-model position="30 -4 1" rotation="0 90 180" src="#pot-obj" mtl="#pot-mtl" scale="1 1 1"></a-obj-model>
-                -->
-                    <!--<a-entity camera look-controls wasd-controls="acceleration:1000" position="0 1.6 0"></a-entity>-->
-                    <!--<a-entity id="head" camera="active: true" look-controls="" cursor="rayOrigin: mouse" position="0 1.6 0" wasd-controls="acceleration:100" rotation="" raycaster=""></a-entity>-->
-                    <!--<a-entity id="cameraRig">
-                        <a-entity id="head" camera="active: true" look-controls="" cursor="rayOrigin: mouse" position="0 1.6 0" wasd-controls="acceleration:100" rotation="" raycaster=""></a-entity>
-                          <a-entity id="lefthand" oculus-touch-controls="hand: left" teleport-controls="button: trigger; collisionEntities: .collidable; cameraRig: #cameraRig; teleportOrigin: #head; hitCylinderColor: #3fa9fa; curveHitColor: #3fa9fa; curveMissColor: #3fa9fa;"></a-entity>
-                          <a-entity id="righthand" oculus-touch-controls="hand: right" laser-controls="hand: right" daydream-controls="" gearvr-controls="" magicleap-controls="" oculus-go-controls="" vive-controls="" vive-focus-controls="" windows-motion-controls="" generic-tracked-controller-controls=""></a-entity>
-                    </a-entity>-->
                 </a-scene>
             </div>
         </div>
