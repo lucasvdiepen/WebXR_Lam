@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="libs/jquery.min.js"></script>
         <script src="libs/aframe.min.js"></script>
+        <script src="libs/howler.core.js"></script>
         <script src="https://unpkg.com/aframe-environment-component@2.0.0/index.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="languages/languages.js"></script>
@@ -103,7 +104,7 @@
             <div id="webXRleft"></div>
             <div id="webXRright"></div>
             <div id="webXRContainer">
-                <a-scene id="aFrame" embedded environment="preset:forest">
+                <a-scene id="aFrame" embedded environment="preset:forest" onclick="AframeClicked()">
                     <!--<a-entity id="cameraRig">
                         <a-entity id="head" camera="active: true" wasd-controls="acceleration:100" look-controls cursor="rayOrigin: mouse" position="0 1.7 0"></a-entity>
                         <a-entity id="lefthand" oculus-touch-controls="hand: left"

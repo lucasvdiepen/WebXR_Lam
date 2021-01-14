@@ -13,13 +13,21 @@ room.setScale(0.2, 0.2, 0.2);
 
 const textHolder = CreateTextHolder(0, 1.5, -1.5);
 
-const lowPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (Low Polly).gltf");
+const lowPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (Low Poly).gltf");
 lowPolyPedistal.setPosition(1.998, 0.990, -0.975);
 lowPolyPedistal.setScale(0.15, 0.15, 0.15);
 
-const highPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Polly).gltf");
+const highPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
 highPolyPedistal.setPosition(1.385, 0.985, -0.975);
 highPolyPedistal.setScale(0.15, 0.15, 0.15);
+
+//Sound
+backgroundMusic = new Howl({
+    src: ['Music/The Vibing Lam (Loop).mp3'],
+    autoplay: false,
+    loop: true,
+    volume: 0.5
+});
 
 //Set all event listeners
 
@@ -60,6 +68,14 @@ function TextHolderToggleVisibility(textHolder)
     {
         textHolder.setVisible(false);
         textHolder.setScale(0, 0, 0);
+    }
+}
+
+function AframeClicked()
+{
+    if(!backgroundMusic.playing())
+    {
+        backgroundMusic.play();
     }
 }
 
