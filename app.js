@@ -13,14 +13,6 @@ room.setScale(0.2, 0.2, 0.2);
 
 const textHolder = CreateTextHolder("Dit is een tekst\nDit is een andere tekst", 0, 1.5, -1.5);
 
-const lowPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (Low Poly).gltf");
-lowPolyPedistal.setPosition(1.998, 0.990, -0.975);
-lowPolyPedistal.setScale(0.15, 0.15, 0.15);
-
-const highPolyPedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
-highPolyPedistal.setPosition(1.385, 0.985, -0.975);
-highPolyPedistal.setScale(0.15, 0.15, 0.15);
-
 const grapePedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
 grapePedistal.setPosition(-2.136, 0.972, -0.975);
 grapePedistal.setScale(0.3, 0.3, 0.3);
@@ -44,6 +36,34 @@ grapeSpotLight.setPosition(-2.136, 2, -0.975);*/
 
 const grapeTextHolder = CreateTextHolder("Grape model text", -1.582, 1.510, -0.988);
 
+const artPiecePedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
+artPiecePedistal.setPosition(-2.129, 0.972, 2.620);
+artPiecePedistal.setScale(0.3, 0.3, 0.3);
+
+const artPieceModel = new Model("Assets (3D)/Blender Files/Art Piece/Art Piece 1.gltf");
+artPieceModel.setPosition(-2.129, 2.159, 2.631);
+artPieceModel.setRotation(0, 90, -3.160);
+artPieceModel.setScale(0.1, 0.1, 0.1);
+
+const artPieceSpotLight = new SpotLight();
+artPieceSpotLight.setPosition(-2.129, 2.339, 2.620);
+artPieceSpotLight.setDistance(0.93);
+artPieceSpotLight.setTarget(artPieceModel);
+
+const kettlePedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (Low Poly).gltf");
+kettlePedistal.setPosition(-2.129, 0.972, 0.945);
+kettlePedistal.setScale(0.3, 0.3, 0.3);
+
+const kettleModel = new Model("Assets (3D)/Blender Files/Kettle/Kettle.gltf");
+kettleModel.setPosition(-2.129, 1.867, 0.945);
+kettleModel.setRotation(0, 90, 0);
+kettleModel.setScale(0.1, 0.1, 0.1);
+
+const kettleSpotLight = new SpotLight();
+kettleSpotLight.setPosition(-2.129, 2.515, 0.945);
+kettleSpotLight.setDistance(0.93);
+kettleSpotLight.setTarget(kettleModel);
+
 //Sound
 backgroundMusic = new Howl({
     src: ['Music/The Vibing Lam (Loop).mp3'],
@@ -61,8 +81,6 @@ cube.addEventListener("click", () => {
 grapeModel.addEventListener("click", () =>{
     TextHolderToggleVisibility(grapeTextHolder);
 });
-
-highPolyPedistal.addEventListener("click", () => lowPolyPedistal.toggleVisibility());
 
 function CreateTextHolder(text, x, y, z)
 {
