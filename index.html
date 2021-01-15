@@ -2,10 +2,14 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
-        <script src="jquery.min.js"></script>
-        <script src="aframe.min.js"></script>
+        <script src="libs/jquery.min.js"></script>
+        <script src="libs/aframe.min.js"></script>
+        <script src="libs/howler.core.js"></script>
         <script src="https://unpkg.com/aframe-environment-component@2.0.0/index.js"></script>
+        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="languages/languages.js"></script>
+        <script src="libs/ma-webxr.js" defer></script>
+        <script src="app.js" defer></script>
         <title>WebXR Lam</title>
     </head>
     <body>
@@ -17,13 +21,13 @@
         <select id="languageSelect"></select>
         -->
         <div id="lamImageContainer">
-            <img id="lamImage" src="Images/lam_building.png" alt="Lam gebouw" />
+            <img id="lamImage" src="Images/lam_building.jpg" alt="Lam gebouw" />
         </div>
         <div id="descriptionContainer">
             <div id="generalDescription">
                 <p class="textCenter">
                 </p>
-                <a href="#webXR" class="webXRbutton"></a>
+                <a href="#webXR" class="button webXRbutton"></a>
             </div>
         </div>
         <div id="infoContainer">
@@ -41,31 +45,34 @@
                 <p><span>Lisse Art Museum</span></p>
             </div>
             <div id="basicInfoContainer">
-                <p class="textCenter"></p>
+                <p class="textCenter basicInfoText">
+                    KEUKENHOF 14<br>2161 AN LISSE<br>POSTBUS 224<br>2170 AE SASSENHEIM<br><br><a class="mailtoText" href="mailto:info@lamlisse.nl">info@lamlisse.nl</a>
+                </p>
             </div>
             <div id="descriptionLamContainer">
                 <p class="textCenter"></p>
             </div>
             <div id="buttonsContainer">
-                <a href="#quotes" id="personalQuotes">Persoonlijke quoutes</a>
-                <a href="#about" id="aboutUs">Over ons</a>
+                <a href="#quotes" class="button" id="personalQuotes"></a>
+                <a href="#about" class="button" id="aboutUs"></a>
             </div>
         </div>
         <div id="about">
             
         </div>
+
         <!-- About Us -->
         <div>
             <div id="aboutLeft">
                 <img id="lamKunstwerk" src="Images/People.jpg" alt="LAM kunstwerk"/>
                 <div id="employeeContainer">
-                    <p class="textCenter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu. Pellentesque commodo placerat dolor, ut pretium quam vestibulum et. Aenean facilisis, felis vel fermentum consectetur, ligula tellus tristique ipsum, vitae volutpat nisi massa ut odio. Mauris a blandit quam. Praesent aliquet odio elit. Aenean bibendum ultricies lorem, vel rhoncus ex scelerisque ut.</p>
+                    <p class="textCenter"></p>
                 </div>
                 
             </div>
             <div id="aboutRight">
                 <div id="historyContainer">
-                    <p class="textCenter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu. Pellentesque commodo placerat dolor, ut pretium quam vestibulum et. Aenean facilisis, felis vel fermentum consectetur, ligula tellus tristique ipsum, vitae volutpat nisi massa ut odio. Mauris a blandit quam. Praesent aliquet odio elit. Aenean bibendum ultricies lorem, vel rhoncus ex scelerisque ut. Mauris porta felis odio, ut euismod neque scelerisque vitae. Suspendisse finibus feugiat tellus vel interdum. Aliquam consequat ipsum lacus, in finibus risus semper at. Donec in ornare odio. Duis elementum purus ligula, vel ornare lacus rutrum non. Etiam et ornare nisl.</p>
+                    <p class="textCenter"></p>
                 </div>
             </div>
         </div>
@@ -79,12 +86,12 @@
             <div id="quotesLeft">
                 <img id="starsImage" src="Images/Stars.png" alt="stars"/>
                 <p id="userReviewHeader">User reviews</p>
-                <p id="userReview1" class="reviewText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu.</p>
-                <p id="userReview2" class="reviewText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu.</p>
-                <p id="userReview3" class="reviewText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor metus enim, in rutrum purus venenatis eu.</p>
+                <p id="userReview1" class="reviewText"></p>
+                <p id="userReview2" class="reviewText"></p>
+                <p id="userReview3" class="reviewText"></p>
             </div>
             <div id="quotesRight">
-                <p id="userReviews" class="reviewText">User review <br><br><br> User review <br><br><br> User review <br><br><br> User review <br><br><br> User review</p>
+                <p id="userReviews" class="reviewText"></p>
             </div>
         </div>
 
@@ -97,8 +104,20 @@
             <div id="webXRleft"></div>
             <div id="webXRright"></div>
             <div id="webXRContainer">
-                <a-scene id="aFrame" embedded environment="preset:forest">
-                    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+                <a-scene id="aFrame" embedded environment="preset:forest" renderer="gammaOutput: true" onclick="AframeClicked()">
+                    <!--<a-entity id="cameraRig">
+                        <a-entity id="head" camera="active: true" wasd-controls="acceleration:100" look-controls cursor="rayOrigin: mouse" position="0 1.7 0"></a-entity>
+                        <a-entity id="lefthand" oculus-touch-controls="hand: left"
+                                teleport-controls="button: trigger; collisionEntities: .collidable; cameraRig: #cameraRig; teleportOrigin: #head; hitCylinderColor: #3fa9fa; curveHitColor: #3fa9fa; curveMissColor: #3fa9fa;"></a-entity>
+                        <a-entity id="righthand" oculus-touch-controls="hand: right" laser-controls="hand: right">
+                        </a-entity>
+                    </a-entity>-->
+
+                    
+                    
+
+                    <!--<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>-->
+                    <!--<a-box id="textHolder" position="-1 1.7 -3" scale="2 1 0.03" opacity="0.5" ccolor="#000000"></a-box>-->
                     <!--
                     <a-asset>
                         <a-asset-item id="pot-obj" src="Pot_LowPoly.obj"></a-asset-item>
@@ -107,7 +126,13 @@
                     
                     <a-obj-model position="30 -4 1" rotation="0 90 180" src="#pot-obj" mtl="#pot-mtl" scale="1 1 1"></a-obj-model>
                 -->
-                    <a-entity camera look-controls wasd-controls="acceleration:1000" position="0 1.6 0"></a-entity>
+                    <!--<a-entity camera look-controls wasd-controls="acceleration:1000" position="0 1.6 0"></a-entity>-->
+                    <!--<a-entity id="head" camera="active: true" look-controls="" cursor="rayOrigin: mouse" position="0 1.6 0" wasd-controls="acceleration:100" rotation="" raycaster=""></a-entity>-->
+                    <!--<a-entity id="cameraRig">
+                        <a-entity id="head" camera="active: true" look-controls="" cursor="rayOrigin: mouse" position="0 1.6 0" wasd-controls="acceleration:100" rotation="" raycaster=""></a-entity>
+                          <a-entity id="lefthand" oculus-touch-controls="hand: left" teleport-controls="button: trigger; collisionEntities: .collidable; cameraRig: #cameraRig; teleportOrigin: #head; hitCylinderColor: #3fa9fa; curveHitColor: #3fa9fa; curveMissColor: #3fa9fa;"></a-entity>
+                          <a-entity id="righthand" oculus-touch-controls="hand: right" laser-controls="hand: right" daydream-controls="" gearvr-controls="" magicleap-controls="" oculus-go-controls="" vive-controls="" vive-focus-controls="" windows-motion-controls="" generic-tracked-controller-controls=""></a-entity>
+                    </a-entity>-->
                 </a-scene>
             </div>
         </div>

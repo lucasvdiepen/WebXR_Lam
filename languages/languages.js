@@ -37,8 +37,15 @@ function SelectLanguage(path, click)
             $("#welcomeText").html(AddLineBreaks(json.greeting));
             $(".webXRbutton").html(AddLineBreaks(json.xrButton));
             $("#generalDescription p").html(AddLineBreaks(json.generalDescription));
-            $("#basicInfoContainer p").html(AddLineBreaks(json.basicInfo));
             $("#descriptionLamContainer p").html(AddLineBreaks(json.lamDescription));
+            $("#personalQuotes").html(AddLineBreaks(json.quotesButton));
+            $("#aboutUs").html(AddLineBreaks(json.aboutUsButton));
+            $("#employeeContainer p").html(AddLineBreaks(json.employeeInfo));
+            $("#historyContainer p").html(AddLineBreaks(json.history));
+            $("#userReview1").html(AddLineBreaks(json.review1));
+            $("#userReview2").html(AddLineBreaks(json.review2));
+            $("#userReview3").html(AddLineBreaks(json.review3));
+            $("#userReviews").html(AddLineBreaks(json.reviews));
         })
         .fail(function(){
             //SelectDefaultLanguage();//PROBLEM: infinite loop if file does not exitst or is unavailable

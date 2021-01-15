@@ -1,7 +1,14 @@
 {
 	"greeting": "Welkom",
 	"xrButton": "Klik hier om naar de VR beleving te gaan",
-	"generalDescription": "Een description van wat de inhoud is van het Web XR en waarom het zo is, hoe je het zou kunnen meemaken enz, \n\nLorem Ipsum",
-	"basicInfo": "Basic Info (Dates, Locatie, Etc)",
-	"lamDescription": "Het LAM is in begin 2019 geopend. Het museum is voor alle leeftijden en heeft kunst die iets met voedsel en consumptie te maken heeft."
+	"generalDescription": "In deze virituele wereld kun je een kijkje nemen in het werk van Folkert de Jong. Je hebt de mogelijkheid om rond te lopen in zijn atelier met een telefoon, computer of vr bril. Sommige dingen kun je klikken voor meer informatie.",
+	"lamDescription": "Het museum is voor alle leeftijden en heeft kunst die iets met voedsel en consumptie te maken heeft.",
+	"quotesButton": "Persoonlijke quotes",
+	"aboutUsButton": "Over ons",
+	"employeeInfo": "Jan van den Broek: Oprichter van de Vandenbroek Foundation.\n\nSietske Van Zanten: Directeur bij Het LAM museum. \n\nFroukje Budding: Marketing, Communicatie & Pers.",
+	"history": "Het LAM is in begin 2019 geopend.\n\nHet LAM komt voort uit de VandenBroek Foundation die kunst toegankelijk wil maken voor een breed publiek. De VandenBroek Foundation is opgericht door Jan van den Broek in 2008. De stichting heeft als doel om jong, cultureel talent te stimuleren. De stichting is er voor de makers én voor de jonge kijkers en luisteraars.\n\nDe stichting wil een inspirerende verzameling kunstwerken opbouwen. Niet alleen de kunsthistorische context is daarbij belangrijk, maar vooral ook de manier van presenteren en de beleving van de jonge kijker.",
+	"review1": "Een van de beste musea die ik heb bezocht, museumonderwerp is consumptie gepresenteerd door moderne hedendaagse kunst!",
+	"review2": "Food art wordt op een mooie en soms leuke manier getoond voor alle leeftijden!",
+	"review3": "Een lekker en heerlijke ervaring!",
+	"reviews": "Leuk centrum!\n\n\nGeweldig plek\n\n\nPrachtige locatie\n\n\nWat een ongelooflijk verfrissend museum\n\n\nEcht een aanrader!"
 }
