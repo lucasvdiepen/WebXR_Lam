@@ -2,16 +2,16 @@ const controls = new Controls(50);
 controls.setSpeed(100);
 controls.enableMovement();
 
-const cube = new Cube();
+/*const cube = new Cube();
 cube.setColor('#4CC3D9');
 cube.setPosition(0, 2, -2);
 cube.setScale(0.5, 0.5, 0.5);
 
+const textHolder = CreateTextHolder("Dit is een tekst\nDit is een andere tekst", 0, 1.5, -1.5);*/
+
 const room = new Model("Assets (3D)/Blender Files/Lobby/Lobby Room.gltf");
 room.setPosition(1, 1, 1);
 room.setScale(0.2, 0.2, 0.2);
-
-const textHolder = CreateTextHolder("Dit is een tekst\nDit is een andere tekst", 0, 1.5, -1.5);
 
 const grapePedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
 grapePedistal.setPosition(-2.136, 0.972, -0.975);
@@ -74,9 +74,9 @@ backgroundMusic = new Howl({
 
 //Set all event listeners
 
-cube.addEventListener("click", () => {
+/*cube.addEventListener("click", () => {
     TextHolderToggleVisibility(textHolder);
-});
+});*/
 
 grapeModel.addEventListener("click", () =>{
     TextHolderToggleVisibility(grapeTextHolder);
