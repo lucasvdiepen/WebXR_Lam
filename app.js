@@ -27,13 +27,6 @@ grapeSpotLight.setPosition(-2.136, 2, -0.975);
 grapeSpotLight.setDistance(0.93);
 grapeSpotLight.setTarget(grapeModel);
 
-/*const kettleModel = new Model("Assets (3D)/Blender Files/Kettle/Kettle.gltf");
-kettleModel.setPosition(-2.136, 1.877, -0.975);
-kettleModel.setScale(0.2, 0.2, 0.2);*/
-
-/*const grapeSpotLight = new DirectionalLight();
-grapeSpotLight.setPosition(-2.136, 2, -0.975);*/
-
 const grapeTextHolder = CreateTextHolder("Grape model text", -1.582, 1.510, -0.988);
 
 const artPiecePedistal = new Model("Assets (3D)/Blender Files/Lobby Props/Display Pedistal (High Poly).gltf");
@@ -132,31 +125,3 @@ function TextFitInHolder(text)
     for(var i = 0; i < newLines; i++) newText += "\n";
     return newText;
 }
-
-function CalculateCrossProduct(x1, y1, x2, y2)
-{
-    return x1 * y2 - y1 * x2;
-}
-
-function CalculateDotProduct(x1, y1, x2, y2)
-{
-    return x1 * x2 + y1 * y2;
-}
-
-function CalculateAngle(x1, y1, x2, y2)
-{
-    let crossProduct = CalculateCrossProduct(x1, y1, x2, y2);
-    let Angle = Math.atan2(Math.abs(crossProduct), CalculateDotProduct(x1, y1, x2, y2)) * 180 / Math.PI;
-    if(crossProduct < 0) Angle = 360 - Angle;
-    return Angle;
-}
-
-/*setInterval(function(){ 
-    //console.log(controls.getPosition());
-    let camPos = controls.getPosition();
-
-    let angle = CalculateAngle(-1, -3, camPos.x, camPos.z);
-    console.log(angle);
-
-    textHolder.setRotation(0, angle, 0);
-}, 500);*/
