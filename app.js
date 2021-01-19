@@ -2,13 +2,6 @@ const controls = new Controls(50);
 controls.setSpeed(100);
 controls.enableMovement();
 
-/*const cube = new Cube();
-cube.setColor('#4CC3D9');
-cube.setPosition(0, 2, -2);
-cube.setScale(0.5, 0.5, 0.5);
-
-const textHolder = CreateTextHolder("Dit is een tekst\nDit is een andere tekst", 0, 1.5, -1.5);*/
-
 const room = new Model("Assets (3D)/Blender Files/Lobby/Lobby Room.gltf");
 room.setPosition(1, 1, 1);
 room.setScale(0.2, 0.2, 0.2);
@@ -38,10 +31,6 @@ backgroundMusic = new Howl({
 });
 
 //Set all event listeners
-
-/*cube.addEventListener("click", () => {
-    TextHolderToggleVisibility(textHolder);
-});*/
 
 grapeModel.addEventListener("click", () =>{
     TextHolderToggleVisibility(grapeTextHolder);
@@ -73,7 +62,7 @@ function ChangeTextHolderText(textHolder, text)
     textElement.setAttribute("value", TextFitInHolder(text));
 }
 
-function CreateModelOnPedistal(modelPath, pedistalLowPoly, pedistalX, pedistalY, pedistalZ, modelY, modelScaleX, modelScaleY, modelScaleZ, modelRotationX, modelRotationY, modelRotationZ, spotlightY)
+function CreateModelOnPedistal(modelPath, pedistalLowPoly, pedistalX, pedistalY, pedistalZ, modelY, modelScaleX, modelScaleY, modelScaleZ, modelRotationX, modelRotationY, modelRotationZ, spotlightY, mtlPath  = "")
 {
     let pedistalPath = "";
     if(pedistalLowPoly) pedistalPath = "Assets (3D)/Blender Files/Lobby Props/Display Pedistal (Low Poly).gltf";
@@ -83,7 +72,11 @@ function CreateModelOnPedistal(modelPath, pedistalLowPoly, pedistalX, pedistalY,
     pedistal.setPosition(pedistalX, pedistalY, pedistalZ);
     pedistal.setScale(0.3, 0.3, 0.3);
 
-    const model = new Model(modelPath);
+    let model;
+
+    if(mtlPath == "") model = new Model(modelPath);
+    else model = new Model(modelPath, mtlPath);
+
     model.setPosition(pedistalX, modelY, pedistalZ);
     model.setRotation(modelRotationX, modelRotationY, modelRotationZ);
     model.setScale(modelScaleX, modelScaleY, modelScaleZ);
