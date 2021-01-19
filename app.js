@@ -13,13 +13,21 @@ const room = new Model("Assets (3D)/Blender Files/Lobby/Lobby Room.gltf");
 room.setPosition(1, 1, 1);
 room.setScale(0.2, 0.2, 0.2);
 
-const grapeModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Grape/Grape.gltf", false, -2.136, 0.972, -0.975, 1.877, 0.1, 0.1, 0.1, 0, 90, 0, 2);
+const grapeModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Grape/Grape.gltf", false, -2.136, 0.972, -0.975, 1.877, 0.1, 0.1, 0.1, 0, 90, 0, 2.404);
 
-const grapeTextHolder = CreateTextHolder("Grape model text", -1.582, 1.510, -0.988);
+const grapeTextHolder = CreateTextHolder("", -1.582, 1.626, -0.975);
 
 const artPieceModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Art Piece/Art Piece 1.gltf", false, -2.129, 0.972, 2.620, 2.159, 0.1, 0.1, 0.1, 0, 90, -3.160, 2.339);
 
+const artPieceTextHolder = CreateTextHolder("", -1.582, 1.626, 2.620);
+
 const kettleModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Kettle/Kettle.gltf", true, -2.129, 0.972, 0.945, 1.867, 0.1, 0.1, 0.1, 0, 90, 0, 2.525);
+
+const kettleTextHolder = CreateTextHolder("", -1.582, 1.626, 0.945);
+
+const potModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Pot (Low Poly)/Pot (Low Poly).gltf", true, 0.991, 0.972, 4.145, 1.871, 0.15, 0.15, 0.15, 180, 0, 0, 2.4);
+
+const potTextHolder = CreateTextHolder("", 0.991, 1.626, 3.591);
 
 //Sound
 backgroundMusic = new Howl({
@@ -38,6 +46,32 @@ backgroundMusic = new Howl({
 grapeModel.addEventListener("click", () =>{
     TextHolderToggleVisibility(grapeTextHolder);
 });
+
+kettleModel.addEventListener("click", () =>{
+    TextHolderToggleVisibility(kettleTextHolder);
+});
+
+artPieceModel.addEventListener("click", () =>{
+    TextHolderToggleVisibility(artPieceTextHolder);
+});
+
+potModel.addEventListener("click", () =>{
+    TextHolderToggleVisibility(potTextHolder);
+});
+
+function SetTextHolderText(grapeText, kettleText, artPieceText, potText)
+{
+    ChangeTextHolderText(grapeTextHolder, grapeText);
+    ChangeTextHolderText(kettleTextHolder, kettleText);
+    ChangeTextHolderText(artPieceTextHolder, artPieceText);
+    ChangeTextHolderText(potTextHolder, potText);
+}
+
+function ChangeTextHolderText(textHolder, text)
+{
+    let textElement = document.getElementById(textHolder.getId()).childNodes[0];
+    textElement.setAttribute("value", TextFitInHolder(text));
+}
 
 function CreateModelOnPedistal(modelPath, pedistalLowPoly, pedistalX, pedistalY, pedistalZ, modelY, modelScaleX, modelScaleY, modelScaleZ, modelRotationX, modelRotationY, modelRotationZ, spotlightY)
 {

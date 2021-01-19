@@ -10,5 +10,9 @@
 	"review1": "One of the best museums I visited, museum subject is consumption presented by modern  contemporary art!",
 	"review2": "Food art is displayed in a beautiful and sometimes fun way for all ages!",
 	"review3": "A delicious and tasty experience!",
-	"reviews": "Nice center!\n\n\nGreat place\n\n\nBeautiful location\n\n\nWhat an incredibly refreshing museum\n\n\nReally recommended!"
+	"reviews": "Nice center!\n\n\nGreat place\n\n\nBeautiful location\n\n\nWhat an incredibly refreshing museum\n\n\nReally recommended!",
+	"grapeText": "Grape model text EN",
+	"kettleText": "Kettle model text EN",
+	"artPieceText": "Art piece model text EN",
+	"potText": "Pot model text EN"
 }
