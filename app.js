@@ -30,20 +30,36 @@ chairModel.setScale(0.2, 0.2, 0.2);
 const chairTextHolder = CreateTextHolder("", 3.603, 1.371, 1.022);
 
 //Create all garbage
+
+//Art piece 1 model garbage
 CreateSprayCan(-2.368, 4.210);
-
 CreatePaintCan(-2.719, 3.848);
-
 CreateMetalPaintCan(-1.871, 4.700);
-
 CreateTF2PaintCan(-2.289, 4.700);
+
+//Grape model garbage
+CreateSprayCan(-2.691, -2.307);
+CreateTF2PaintCan(-2.858, -1.713);
+
+//Kettle model garbage
+CreatePaintCan(-2.580, 0.380, 75);
+CreateSprayCan(-2.691, 0.636);
+
+//Chair model garbage
+CreateSprayCan(4.693, 0.386);
+CreateSprayCan(4.693, 1.527, 79.41);
+CreateTF2PaintCan(4.747, 0.829);
+
+//Pot model garbage
+CreateSprayCan(1.525, 4.620);
+CreateSprayCan(0.536, 4.699, 52.29);
 
 //Sound
 backgroundMusic = new Howl({
     src: ['Music/The Vibing Lam (Loop).mp3'],
     autoplay: false,
     loop: true,
-    volume: 0.5
+    volume: 0.3
 });
 
 //Set all event listeners
@@ -68,41 +84,41 @@ chairModel.addEventListener("click", () =>{
     TextHolderToggleVisibility(chairTextHolder);
 });
 
-function CreateSprayCan(x, z)
+function CreateSprayCan(x, z, rotationY = 0)
 {
     const sprayCanModel = new Model("Assets (3D)/Models/spray_can/scene.gltf");
     sprayCanModel.setPosition(x, 0.998, z);
-    //sprayCanModel.setRotation(0, 270, 0);
+    sprayCanModel.setRotation(0, rotationY, 0);
     sprayCanModel.setScale(0.1, 0.1, 0.1);
 
     return sprayCanModel;
 }
 
-function CreatePaintCan(x, z)
+function CreatePaintCan(x, z, rotationY = 0)
 {
     const paintCanModel = new Model("Assets (3D)/Models/paint_can/scene.gltf");
     paintCanModel.setPosition(x, 0.993, z);
-    //paintCanModel.setRotation(0, 270, 0);
+    paintCanModel.setRotation(0, rotationY, 0);
     paintCanModel.setScale(0.05, 0.05, 0.05);
 
     return paintCanModel;
 }
 
-function CreateMetalPaintCan(x, z)
+function CreateMetalPaintCan(x, z, rotationY = 0)
 {
     const metalPaintCanModel = new Model("Assets (3D)/Models/metal_paint_can/scene.gltf");
     metalPaintCanModel.setPosition(x, 0.997, z);
-    //metalPaintCanModel.setRotation(0, 270, 0);
+    metalPaintCanModel.setRotation(0, rotationY, 0);
     metalPaintCanModel.setScale(0.017, 0.017, 0.017);
 
     return metalPaintCanModel;
 }
 
-function CreateTF2PaintCan(x, z)
+function CreateTF2PaintCan(x, z, rotationY = 0)
 {
     const tf2PaintCanModel = new Model("Assets (3D)/Models/tf2_paint_can/scene.gltf");
     tf2PaintCanModel.setPosition(x, 0.997, z);
-    //tf2PaintCanModel.setRotation(0, 270, 0);
+    tf2PaintCanModel.setRotation(0, rotationY, 0);
     tf2PaintCanModel.setScale(0.1, 0.1, 0.1);
 
     return tf2PaintCanModel;
