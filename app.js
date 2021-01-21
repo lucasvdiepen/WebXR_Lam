@@ -22,6 +22,22 @@ const potModel = CreateModelOnPedistal("Assets (3D)/Blender Files/Pot (Low Poly)
 
 const potTextHolder = CreateTextHolder("", 0.991, 1.626, 3.591);
 
+const chairModel = new Model("Assets (3D)/Blender Files/Stoel/Stoel.gltf");
+chairModel.setPosition(4.334, 0.993, 1.022);
+chairModel.setRotation(0, 270, 0);
+chairModel.setScale(0.2, 0.2, 0.2);
+
+const chairTextHolder = CreateTextHolder("", 3.603, 1.371, 1.022);
+
+//Create all garbage
+CreateSprayCan(-2.368, 4.210);
+
+CreatePaintCan(-2.719, 3.848);
+
+CreateMetalPaintCan(-1.871, 4.700);
+
+CreateTF2PaintCan(-2.289, 4.700);
+
 //Sound
 backgroundMusic = new Howl({
     src: ['Music/The Vibing Lam (Loop).mp3'],
@@ -48,12 +64,57 @@ potModel.addEventListener("click", () =>{
     TextHolderToggleVisibility(potTextHolder);
 });
 
-function SetTextHolderText(grapeText, kettleText, artPieceText, potText)
+chairModel.addEventListener("click", () =>{
+    TextHolderToggleVisibility(chairTextHolder);
+});
+
+function CreateSprayCan(x, z)
+{
+    const sprayCanModel = new Model("Assets (3D)/Models/spray_can/scene.gltf");
+    sprayCanModel.setPosition(x, 0.998, z);
+    //sprayCanModel.setRotation(0, 270, 0);
+    sprayCanModel.setScale(0.1, 0.1, 0.1);
+
+    return sprayCanModel;
+}
+
+function CreatePaintCan(x, z)
+{
+    const paintCanModel = new Model("Assets (3D)/Models/paint_can/scene.gltf");
+    paintCanModel.setPosition(x, 0.993, z);
+    //paintCanModel.setRotation(0, 270, 0);
+    paintCanModel.setScale(0.05, 0.05, 0.05);
+
+    return paintCanModel;
+}
+
+function CreateMetalPaintCan(x, z)
+{
+    const metalPaintCanModel = new Model("Assets (3D)/Models/metal_paint_can/scene.gltf");
+    metalPaintCanModel.setPosition(x, 0.997, z);
+    //metalPaintCanModel.setRotation(0, 270, 0);
+    metalPaintCanModel.setScale(0.017, 0.017, 0.017);
+
+    return metalPaintCanModel;
+}
+
+function CreateTF2PaintCan(x, z)
+{
+    const tf2PaintCanModel = new Model("Assets (3D)/Models/tf2_paint_can/scene.gltf");
+    tf2PaintCanModel.setPosition(x, 0.997, z);
+    //tf2PaintCanModel.setRotation(0, 270, 0);
+    tf2PaintCanModel.setScale(0.1, 0.1, 0.1);
+
+    return tf2PaintCanModel;
+}
+
+function SetTextHolderText(grapeText, kettleText, artPieceText, potText, chairText)
 {
     ChangeTextHolderText(grapeTextHolder, grapeText);
     ChangeTextHolderText(kettleTextHolder, kettleText);
     ChangeTextHolderText(artPieceTextHolder, artPieceText);
     ChangeTextHolderText(potTextHolder, potText);
+    ChangeTextHolderText(chairTextHolder, chairText);
 }
 
 function ChangeTextHolderText(textHolder, text)
@@ -95,7 +156,7 @@ function CreateTextHolder(text, x, y, z)
     textHolder.setVisible(false);
     textHolder.setColor("#000000");
     textHolder.setPosition(x, y, z);
-    textHolder.setScale(0.850, 0.6, 0.03);
+    textHolder.setScale(0, 0, 0);
     textHolder.setOpacity(0.6);
     textHolder.elem.setAttribute("look-at", "#head");
 
