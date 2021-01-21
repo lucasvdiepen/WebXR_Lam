@@ -72,7 +72,6 @@ class VRElement {
             }
             else 
             {
-                console.log(parentId);
                 let parent = document.querySelector("#" + parentId);
                 parent.appendChild(this.elem);
             }
