@@ -59,7 +59,7 @@ backgroundMusic = new Howl({
     src: ['Music/The Vibing Lam (Loop).mp3'],
     autoplay: false,
     loop: true,
-    volume: 0.3
+    volume: 0.1
 });
 
 //Set all event listeners
